@@ -1,0 +1,22 @@
+languageCode = "en-us"
+
+[languages]
+  [languages.en]
+    title = "luis space"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/"
+        weight = -100
+      [[languages.en.menu.main]]
+        identifier = "usefulness"
+        name = "Usefulness"
+        url = "/usefulness"
+        weight = -2
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+        weight = -1

@@ -1,0 +1,9 @@
+<nav>
+	<ol>
+		{{ range $.Site.Menus.main }}
+			{{ if not .HasChildren }}
+				<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+			{{ end }}
+		{{ end }}
+	</ol>
+</nav>
