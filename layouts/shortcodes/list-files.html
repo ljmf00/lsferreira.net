@@ -1,0 +1,9 @@
+{{ $dir := .Get "dir" }}
+{{ $regexp := .Get "regexp" }}
+
+{{ range sort (readDir (delimit (slice "static" $dir) "/")) "Name" }}
+  {{ if (findRE $regexp .Name) }}
+    <a href="{{ $dir }}/{{ .Name }}">{{ .Name }}</a>
+  {{ end }}
+{{ end }}
+
