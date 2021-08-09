@@ -21,3 +21,9 @@ languageCode = "en-us"
         name = "About"
         url = "/about"
         weight = -1
+      [[languages.en.menu.main]]
+        identifier = "static-content"
+        name = "Index"
+        url = "/public"
+        weight = 0
+
