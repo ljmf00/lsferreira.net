@@ -1,0 +1,3 @@
+[submodule "static"]
+	path = static
+	url = https://github.com/ljmf00/lsferreira.net-static
