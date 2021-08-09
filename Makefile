@@ -11,3 +11,5 @@ build-hugo:
 serve-hugo:
 	hugo server
 
+publish:
+	ipfs add --nocopy --fscache --raw-leaves --pin -r public/
