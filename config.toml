@@ -11,9 +11,9 @@ languageCode = "en-us"
         url = "/"
         weight = -100
       [[languages.en.menu.main]]
-        identifier = "usefulness"
-        name = "Usefulness"
-        url = "/usefulness"
+        identifier = "projects"
+        name = "Projects"
+        url = "/projects"
         weight = -2
       [[languages.en.menu.main]]
         identifier = "about"
