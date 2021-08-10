@@ -1,4 +1,4 @@
-build: build-static build-hugo
+build: build-static build-hugo postscript-build
 serve: build-static serve-hugo
 
 build-static:
@@ -7,6 +7,9 @@ build-static:
 
 build-hugo:
 	hugo
+
+postscript-build:
+	./scripts/ignore-files.sh
 
 serve-hugo:
 	hugo server
