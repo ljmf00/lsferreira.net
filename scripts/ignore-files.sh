@@ -33,4 +33,3 @@ while IFS= read -r -d $'\n' ientry; do
 		rm -rf "$fentry"
 	done < <(find "$project_folder" | sed "s|^$project_folder||" | grep "$ientry" | sed -e "s|^|$project_folder|")
 done < <(cat "$ignore_file")
-
