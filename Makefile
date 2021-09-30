@@ -1,10 +1,9 @@
 build: build-static build-hugo postscript-build
+full-build: clean build
 serve: build-static serve-hugo
 
 clean:
 	rm -rf public/
-
-full: clean build
 
 build-static:
 	git submodule update --init --recursive
