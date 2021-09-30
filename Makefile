@@ -1,6 +1,11 @@
 build: build-static build-hugo postscript-build
 serve: build-static serve-hugo
 
+clean:
+	rm -rf public/
+
+full: clean build
+
 build-static:
 	git submodule update --init --recursive
 	./static/generate.sh
@@ -14,5 +19,12 @@ postscript-build:
 serve-hugo:
 	hugo server
 
-publish:
+publish-ipfs: build ipfs-pin-public
+
+ipfs-pin-public:
 	ipfs add --nocopy --fscache --raw-leaves --pin -r public/
+
+pack-car: build npx-ipfs-car-public
+
+npx-ipfs-car-public:
+	npx ipfs-car --pack public/ --output public.car
