@@ -1,2 +1,6 @@
 ^/generate\.sh$
+^/update\.sh$
 ^/content-public/
+^/.git$
+^/.gitignore$
+^/.pre-commit-config.yaml$
