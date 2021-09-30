@@ -27,3 +27,4 @@ pack-car: build npx-ipfs-car-public
 
 npx-ipfs-car-public:
 	npx ipfs-car --pack public/ --output public.car
+	npx ipfs-car --list-roots public.car > public.car.cid
