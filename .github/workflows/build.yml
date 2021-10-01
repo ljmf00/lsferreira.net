@@ -19,7 +19,7 @@ jobs:
         run: |
           apk add rsync
       - name: Build website
-        run: make full-build
+        run: make full-build HUGO_ARGS=--minify
       - name: Archive artifact folder
         run: tar -cvf public.tar public
       - name: Upload Artifacts
