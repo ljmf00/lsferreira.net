@@ -10,13 +10,13 @@ build-static:
 	./static/generate.sh
 
 build-hugo:
-	hugo
+	hugo $(HUGO_ARGS)
 
 postscript-build:
 	./scripts/ignore-files.sh
 
 serve-hugo:
-	hugo server
+	hugo server $(HUGO_ARGS)
 
 publish-ipfs: build ipfs-pin-public
 
