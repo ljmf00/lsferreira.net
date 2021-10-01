@@ -1,5 +1,6 @@
 relativeURLs = true
 languageCode = "en-us"
+enableGitInfo = true
 
 [languages]
   [languages.en]
