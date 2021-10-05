@@ -5,6 +5,7 @@ enableGitInfo = true
 [languages]
   [languages.en]
     title = "luis space"
+    copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 
     [languages.en.menu]
       [[languages.en.menu.main]]
