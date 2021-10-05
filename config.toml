@@ -2,6 +2,9 @@ relativeURLs = true
 languageCode = "en-us"
 enableGitInfo = true
 
+[author]
+  name = "Luís Ferreira"
+
 [languages]
   [languages.en]
     title = "luis space"
