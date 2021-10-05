@@ -18,7 +18,7 @@
 		<p class="min-textbox">Nothing to see here. Check my <a href="{{ "about" }}">about page</a>!</p>
 		{{ end }}
 		{{ range $paginator.Pages }}
-		  <div class="post on-list min-textbox">
+		<div class="post on-list min-textbox">
 			<div class="post-meta">
 				<h2 class="post-title">
 				  <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
@@ -32,37 +32,36 @@
 			</div>
 
 			{{ if .Params.Cover }}
-			  <img src="{{ .Params.Cover | absURL }}" class="post-cover" alt="{{ .Title | plainify | default " " }}" />
+				<img src="{{ .Params.Cover | absURL }}" class="post-cover" alt="{{ .Title | plainify | default " " }}" />
 			{{ end }}
 
 			<div class="post-description">
-			  {{ if .Params.showFullContent }}
-			  {{ .Content | markdownify }}
-			  {{ else if .Description }}
-			  {{ .Description | markdownify }}
-			  {{ else }}
-			  {{ if .Truncated }}
-			  {{ .Summary }}
-			  {{ end }}
-			  {{ end }}
+				{{ if .Params.showFullContent }}
+				{{ .Content | markdownify }}
+				{{ else if .Description }}
+				{{ .Description | markdownify }}
+				{{ else }}
+				{{ if .Truncated }}
+				{{ .Summary }}
+				{{ end }}
+				{{ end }}
 			</div>
 
 			{{ if .Params.tags }}
-			  <span class="post-tags xx-sm">
+			<span class="post-tags xx-sm">
 				{{ range .Params.tags }}
 				#<a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
 				  {{- . -}}
 				</a>&nbsp;
 				{{ end }}
-			  </span>
+			</span>
 			{{ end }}
 			{{ if not .Params.showFullContent }}
 			<div>
-			  <a class="read-more button"
-				href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
+				<a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
 			</div>
 			{{ end }}
-		  </div>
+		</div>
 		{{ end }}
 		{{ partial "pagination.html" . }}
 	  </div>
