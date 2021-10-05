@@ -9,12 +9,18 @@ build-static:
 	git submodule update --init --recursive
 	./static/generate.sh
 
+gen-lastupdate:
+	@echo "Update lastupdate file"
+	@sh -c "echo \"<!DOCTYPE html><html lang=\\\"en\\\"><body><pre style=\\\"font-size: xx-small\\\">Last update: \$$(date +%s)</pre></body></html>\" > static/lastupdate.html"
+
+build-hugo: gen-lastupdate
 build-hugo:
 	hugo $(HUGO_ARGS)
 
 postscript-build:
 	./scripts/ignore-files.sh
 
+serve-hugo: gen-lastupdate
 serve-hugo:
 	hugo server $(HUGO_ARGS)
 
