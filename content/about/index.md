@@ -4,9 +4,9 @@ title: About
 
 ## Luís Ferreira
 
-{{< right-avatar src="/public/pictures/avatar.jpg" alt="My profile picture" >}}
+{{< right-avatar src="/public/pictures/avatar-square.jpg" alt="My profile picture" >}}
 
-Hey there, I'm a 20 years old student passioned for computers, highly motivated and interested for Free Software movement and Open Source projects. I like to develop correct and secure back-end infrastructures with the low-level power. I'm mostly proficient in D, C and C++.
+Hey there, I'm a 21 years old student passioned for computers, highly motivated and interested for Free Software movement and Open Source projects. I like to develop correct and secure back-end infrastructures with the low-level power. I'm mostly proficient in D, C and C++.
 
 I'm interested in developing compilers and parsers. I also like to tinker with highly distributed systems and develop tooling and integrate them. I'm the founder of [aurorafoss.org](https://aurorafoss.org/).
 
