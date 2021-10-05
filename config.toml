@@ -5,6 +5,11 @@ enableGitInfo = true
 [author]
   name = "Luís Ferreira"
 
+[markup]
+  [markup.highlight]
+      codeFences = true
+      style = 'emacs'
+
 [languages]
   [languages.en]
     title = "luis space"

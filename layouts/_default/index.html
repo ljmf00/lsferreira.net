@@ -18,34 +18,24 @@
 		<p class="min-textbox">Nothing to see here. Check my <a href="{{ "about" }}">about page</a>!</p>
 		{{ end }}
 		{{ range $paginator.Pages }}
-		  <div class="post on-list">
-			<h1 class="post-title">
-			  <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-			</h1>
+		  <div class="post on-list min-textbox">
 			<div class="post-meta">
-			  <span class="post-date">
-				{{ .Date.Format "2006-01-02" }}
-			  </span>
-			  {{ with .Params.Author }}
-				<span class="post-author">:: {{ . }}</span>
-			  {{ end }}
-			</div>
-
-			{{ if .Params.tags }}
-			  <span class="post-tags">
-				{{ range .Params.tags }}
-				#<a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
-				  {{- . -}}
-				</a>&nbsp;
+				<h2 class="post-title">
+				  <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+				</h2>
+				<span class="post-date">
+					{{ .Date.Format "2006-01-02" }}
+				</span>
+				{{ with .Params.Author }}
+					<span class="post-author">:: {{ . }}</span>
 				{{ end }}
-			  </span>
-			{{ end }}
+			</div>
 
 			{{ if .Params.Cover }}
 			  <img src="{{ .Params.Cover | absURL }}" class="post-cover" alt="{{ .Title | plainify | default " " }}" />
 			{{ end }}
 
-			<div class="post-content">
+			<div class="post-description">
 			  {{ if .Params.showFullContent }}
 			  {{ .Content | markdownify }}
 			  {{ else if .Description }}
@@ -57,6 +47,15 @@
 			  {{ end }}
 			</div>
 
+			{{ if .Params.tags }}
+			  <span class="post-tags xx-sm">
+				{{ range .Params.tags }}
+				#<a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
+				  {{- . -}}
+				</a>&nbsp;
+				{{ end }}
+			  </span>
+			{{ end }}
 			{{ if not .Params.showFullContent }}
 			<div>
 			  <a class="read-more button"
