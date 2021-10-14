@@ -15,6 +15,9 @@ jobs:
     container: klakegg/hugo:0.83.1-ext-alpine-onbuild
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.MY_GITHUB_PAT }}
+          submodules: recursive
       - name: Install dependencies
         run: |
           apk add rsync
