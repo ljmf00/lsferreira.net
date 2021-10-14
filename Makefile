@@ -6,7 +6,6 @@ clean:
 	rm -rf public/
 
 build-static:
-	git submodule update --init --recursive
 	./static/generate.sh
 
 gen-lastupdate:
