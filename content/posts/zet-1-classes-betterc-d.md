@@ -81,7 +81,8 @@ T alloc(T, Args...)(auto ref Args args)
 
 void destroy(T)(ref T t)
 {
-    t.__dtor();
+    static if (__traits(hasMember, T, "__dtor"))
+        t.__dtor();
     () @trusted {
         import core.memory : pureFree;
         pureFree(cast(void*)t);
@@ -109,6 +110,7 @@ extern(C++) class Foo
 extern(C) int main()
 {
     Foo foo = alloc!Foo(2, 2.0f);
+    scope(exit) destroy(foo);
 
     int a = foo.a;   // 4
     float b = foo.b; // 2.0
