@@ -74,20 +74,20 @@ T alloc(T, Args...)(auto ref Args args)
         return _t;
     } ();
     if(!t) return null;
-    t.__ctor(args);
+    import core.lifetime : forward;
+    t.__ctor(forward!args);
 
     return t;
 }
 
 void destroy(T)(ref T t)
 {
-    static if (__traits(hasMember, T, "__dtor"))
-        t.__dtor();
-    () @trusted {
-        import core.memory : pureFree;
-        pureFree(cast(void*)t);
-    }();
-    t = null;
+    static if (__traits(hasMember, T, "__xdtor"))
+        t.__xdtor();
+    import core.memory : pureFree;
+    pureFree(cast(void*)t);
+    static if (__traits(compiles, { t = null; }))
+        t = null;
 }
 ```
 
@@ -119,3 +119,6 @@ extern(C) int main()
     return 0;
 }
 ```
+
+Please note that I haven't covered every corner case about classes with this
+example.
