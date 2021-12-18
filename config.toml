@@ -25,6 +25,11 @@ enableGitInfo = true
         identifier = "projects"
         name = "Projects"
         url = "/projects"
+        weight = -3
+      [[languages.en.menu.main]]
+        identifier = "tasks"
+        name = "Tasks"
+        url = "https://tasks.lsferreira.net"
         weight = -2
       [[languages.en.menu.main]]
         identifier = "about"
