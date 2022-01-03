@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     container: alpine:3.14.2
     needs: hugo
-    if: github.ref == 'refs/heads/master'
+    if: github.event_name != 'pull_request'
     steps:
       - name: Download the build artifact
         uses: actions/download-artifact@v2
@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     container: alpine:3.14.2
     needs: hugo
-    if: github.ref == 'refs/heads/master'
+    if: github.event_name != 'pull_request'
     steps:
       - name: Download the build artifact
         uses: actions/download-artifact@v2
@@ -111,7 +111,7 @@ jobs:
     runs-on: ubuntu-latest
     container: alpine:3.14.2
     needs: hugo
-    if: github.ref == 'refs/heads/master'
+    if: github.event_name != 'pull_request'
     outputs:
       cid: ${{ steps.web3.outputs.cid }}
     steps:
@@ -131,7 +131,7 @@ jobs:
     runs-on: ubuntu-latest
     container: alpine:3.14.2
     needs: web3-storage
-    if: github.ref == 'refs/heads/master'
+    if: github.event_name != 'pull_request'
     steps:
       - name: Install dependencies
         run: |
