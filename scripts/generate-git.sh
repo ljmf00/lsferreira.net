@@ -10,7 +10,7 @@
 	mv "$TEMP_DIR"/* .
     fi
     ( export GIT_DIR=.
-	git worktree add file master
+	git worktree add raw master
 	git update-server-info
     )
     echo "My personal website source code" > description
