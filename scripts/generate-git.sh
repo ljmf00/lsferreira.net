@@ -13,6 +13,7 @@
 	git worktree add file master
 	git update-server-info
     )
+    echo "My personal website source code" > description
 
     stagit .
     cp log.html index.html
