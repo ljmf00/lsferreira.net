@@ -12,7 +12,7 @@ on:
 jobs:
   hugo:
     runs-on: ubuntu-latest
-    container: klakegg/hugo:0.83.1-ext-alpine-onbuild
+    container: ljmf00/archlinux
     steps:
       - uses: actions/checkout@v2
         with:
@@ -20,7 +20,8 @@ jobs:
           submodules: recursive
       - name: Install dependencies
         run: |
-          apk add rsync
+          pacman -Syu rsync hugo --noconfirm
+          sudo -u docker yay -S stagit --noconfirm
       - name: Build website
         run: make full-build HUGO_ARGS=--minify
       - name: Archive artifact folder
@@ -88,7 +89,8 @@ jobs:
       - name: Extract artifact
         run: tar -xvf public.tar
       - name: Remove index blobs
-        run: rm -rf public/public/
+        run: |
+          rm -rf public/public/ public/git/
       - name: Install dependencies
         run: |
           apk add jq
