@@ -18,6 +18,7 @@ build-hugo:
 
 postscript-build:
 	./scripts/ignore-files.sh
+	./scripts/generate-git.sh
 
 serve-hugo: gen-lastupdate
 serve-hugo:
