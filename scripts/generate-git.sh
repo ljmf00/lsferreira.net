@@ -9,7 +9,7 @@
 	git clone --bare https://github.com/ljmf00/lsferreira.net "$TEMP_DIR"
 	mv "$TEMP_DIR"/* .
     fi
-    GIT_DIR=. GIT_WORK_TREE=./file git checkout
+    GIT_DIR=. git worktree add file master
 
     stagit .
     cp log.html index.html
