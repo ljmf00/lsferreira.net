@@ -124,7 +124,7 @@ jobs:
       - name: Extract artifact
         run: tar -xvf public.tar
       - name: Add public CAR file
-        uses: web3-storage/add-to-web3@v1
+        uses: web3-storage/add-to-web3@77b645f58a5ec593d5ab23666fee1537331b7858
         id: web3
         with:
           web3_token: ${{ secrets.WEB3_STORAGE_TOKEN }}
