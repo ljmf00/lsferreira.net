@@ -12,6 +12,9 @@
     ( export GIT_DIR=.
 	git worktree add raw master
 	git update-server-info
+	mv objects/pack/*.pack .
+	git unpack-objects < *.pack
+	rm -f ./*.pack objects/pack/*
     )
     echo "My personal website source code" > description
 
